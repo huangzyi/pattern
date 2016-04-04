@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2016-04-04 23:37:19
+Date: 2016-04-04 23:51:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,9 +21,9 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `article`;
 CREATE TABLE `article` (
   `arcid` int(64) NOT NULL AUTO_INCREMENT,
-  `article` text,
+  `article` text NOT NULL,
   `author` varchar(20) DEFAULT NULL,
-  `authorid` varchar(64) DEFAULT NULL,
+  `authorid` varchar(64) NOT NULL,
   `now` datetime DEFAULT NULL,
   `title` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`arcid`)
@@ -44,7 +44,7 @@ CREATE TABLE `comment` (
   `comid` int(64) NOT NULL AUTO_INCREMENT,
   `arcid` int(64) NOT NULL,
   `userid` int(64) NOT NULL,
-  `username` varchar(20) NOT NULL,
+  `username` varchar(20) DEFAULT NULL,
   `comment` text NOT NULL,
   `datetime` datetime NOT NULL,
   PRIMARY KEY (`comid`)
@@ -111,9 +111,9 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(64) NOT NULL AUTO_INCREMENT,
   `picture` varchar(255) DEFAULT NULL,
-  `username` varchar(20) DEFAULT NULL,
+  `username` varchar(20) NOT NULL,
   `salt` varchar(255) DEFAULT NULL,
-  `userpassport` varchar(40) DEFAULT NULL,
+  `userpassport` varchar(40) NOT NULL,
   `sex` varchar(4) DEFAULT NULL,
   `permission` tinyint(3) unsigned zerofill DEFAULT NULL COMMENT '数字越高权限越大：默认为0，无法修改他人博客；在自己博客为1；管理员权限为2',
   PRIMARY KEY (`id`)
@@ -150,5 +150,3 @@ INSERT INTO `user` VALUES ('32', null, 'dcdsc', null, 'vfdvfdv', null, '000');
 INSERT INTO `user` VALUES ('33', null, 'dscsdc', null, 'vdfvfv', null, '000');
 INSERT INTO `user` VALUES ('34', null, 'gyuggygu', null, 'tfytyty', null, '000');
 INSERT INTO `user` VALUES ('35', null, 'ht', null, '5959', null, '000');
-INSERT INTO `user` VALUES ('36', null, null, null, null, null, '000');
-INSERT INTO `user` VALUES ('37', null, null, null, null, null, '000');

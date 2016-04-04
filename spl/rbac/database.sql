@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2016-04-01 23:13:04
+Date: 2016-04-04 23:37:19
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -112,54 +112,43 @@ CREATE TABLE `user` (
   `id` int(64) NOT NULL AUTO_INCREMENT,
   `picture` varchar(255) DEFAULT NULL,
   `username` varchar(20) DEFAULT NULL,
-  `blogname` varchar(20) DEFAULT NULL,
-  `realname` varchar(20) DEFAULT NULL,
   `salt` varchar(255) DEFAULT NULL,
   `userpassport` varchar(40) DEFAULT NULL,
-  `birthday` date DEFAULT NULL,
-  `city` varchar(100) DEFAULT NULL,
-  `sex` varchar(10) DEFAULT NULL,
-  `address` varchar(100) DEFAULT NULL,
-  `postcode` varchar(5) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `tel` varchar(20) DEFAULT NULL,
-  `wechat` varchar(20) DEFAULT NULL,
-  `QQ` varchar(20) DEFAULT NULL,
-  `homepage` varchar(100) DEFAULT NULL,
-  `ip` varchar(20) DEFAULT NULL,
-  `question` varchar(50) DEFAULT NULL,
-  `answer` varchar(50) DEFAULT NULL,
+  `sex` varchar(4) DEFAULT NULL,
+  `permission` tinyint(3) unsigned zerofill DEFAULT NULL COMMENT '数字越高权限越大：默认为0，无法修改他人博客；在自己博客为1；管理员权限为2',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', null, '35435', null, null, null, '353543', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('2', null, ' 格尼尔', null, null, null, '5965984', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('4', null, 'bhyuy', null, null, null, '26265', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('7', null, 'frerf', null, null, null, 'effe', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('8', null, 'gyyug', null, null, null, '1586814', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('9', null, '35435', null, null, null, '554', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('10', null, '5487', null, null, null, '254', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('12', null, '5445', null, null, null, '514', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('13', null, '35435', null, null, null, '4554', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('14', null, 'rgtg', null, null, null, 'bgbg', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('15', null, 'ht', null, null, null, 'trhe', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('17', null, 'dede', null, null, null, 'cdffc', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('19', null, 'efefr', null, null, null, 'frerfre', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('20', null, 'fhueh', null, null, null, 'vff', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('21', null, 'huangziyi', null, null, null, 'dssd', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('22', null, 'cdscfd', null, null, null, 'dcvscvsdc', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('23', null, 'fdvdfv', null, null, null, 'vfdvdv', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('24', null, 'vfdvdfv', null, null, null, 'svdfvdfvd', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('25', null, 'efewfe', null, null, null, 'vfdvfdv', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('26', null, 'dfbvfgb', null, null, null, 'dfbsdfb', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('27', null, 'ddf', null, null, null, 'sdfs', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('28', null, 'fvdfv', null, null, null, 'vfdvf', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('29', null, 'dfsdsf', null, null, null, 'vfdvdfv', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('30', null, 'fgfdgdf', null, null, null, 'bggfbgfb', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('32', null, 'dcdsc', null, null, null, 'vfdvfdv', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('33', null, 'dscsdc', null, null, null, 'vdfvfv', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('34', null, 'gyuggygu', null, null, null, 'tfytyty', null, null, null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('35', null, 'ht', null, null, null, '5959', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1', null, '35435', null, '353543', null, '000');
+INSERT INTO `user` VALUES ('2', null, ' 格尼尔', null, '5965984', null, '000');
+INSERT INTO `user` VALUES ('4', null, 'bhyuy', null, '26265', null, '000');
+INSERT INTO `user` VALUES ('7', null, 'frerf', null, 'effe', null, '000');
+INSERT INTO `user` VALUES ('8', null, 'gyyug', null, '1586814', null, '000');
+INSERT INTO `user` VALUES ('9', null, '35435', null, '554', null, '000');
+INSERT INTO `user` VALUES ('10', null, '5487', null, '254', null, '000');
+INSERT INTO `user` VALUES ('12', null, '5445', null, '514', null, '002');
+INSERT INTO `user` VALUES ('13', null, '35435', null, '4554', null, '000');
+INSERT INTO `user` VALUES ('14', null, 'rgtg', null, 'bgbg', null, '000');
+INSERT INTO `user` VALUES ('15', null, 'ht', null, 'trhe', null, '000');
+INSERT INTO `user` VALUES ('17', null, 'dede', '', 'cdffc', null, '000');
+INSERT INTO `user` VALUES ('19', null, 'efefr', '', 'frerfre', null, '000');
+INSERT INTO `user` VALUES ('20', null, 'fhueh', '', 'vff', null, '000');
+INSERT INTO `user` VALUES ('21', null, 'huangziyi', '', 'dssd', null, '000');
+INSERT INTO `user` VALUES ('22', null, 'cdscfd', '', 'dcvscvsdc', null, '000');
+INSERT INTO `user` VALUES ('23', null, 'fdvdfv', '', 'vfdvdv', null, '000');
+INSERT INTO `user` VALUES ('24', null, 'vfdvdfv', '', 'svdfvdfvd', null, '000');
+INSERT INTO `user` VALUES ('25', null, 'efewfe', null, 'vfdvfdv', null, '000');
+INSERT INTO `user` VALUES ('26', null, 'dfbvfgb', null, 'dfbsdfb', null, '000');
+INSERT INTO `user` VALUES ('27', null, 'ddf', null, 'sdfs', null, '000');
+INSERT INTO `user` VALUES ('28', null, 'fvdfv', null, 'vfdvf', null, '000');
+INSERT INTO `user` VALUES ('29', null, 'dfsdsf', null, 'vfdvdfv', null, '000');
+INSERT INTO `user` VALUES ('30', null, 'fgfdgdf', null, 'bggfbgfb', null, '000');
+INSERT INTO `user` VALUES ('32', null, 'dcdsc', null, 'vfdvfdv', null, '000');
+INSERT INTO `user` VALUES ('33', null, 'dscsdc', null, 'vdfvfv', null, '000');
+INSERT INTO `user` VALUES ('34', null, 'gyuggygu', null, 'tfytyty', null, '000');
+INSERT INTO `user` VALUES ('35', null, 'ht', null, '5959', null, '000');
+INSERT INTO `user` VALUES ('36', null, null, null, null, null, '000');
+INSERT INTO `user` VALUES ('37', null, null, null, null, null, '000');
